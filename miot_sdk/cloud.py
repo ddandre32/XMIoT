@@ -125,18 +125,29 @@ class MIoTOAuth2Client:
                 timeout=aiohttp.ClientTimeout(total=MIHOME_HTTP_API_TIMEOUT),
             ) as response:
                 if response.status == 401:
+                    _LOGGER.error("Unauthorized, get_token: %s", data)
                     raise MIoTOAuth2Error("Unauthorized", MIoTErrorCode.CODE_OAUTH_UNAUTHORIZED)
                 if response.status != 200:
-                    raise MIoTOAuth2Error(f"HTTP error {response.status}")
+                    text = await response.text()
+                    _LOGGER.error("HTTP error %d, get_token: %s -> %s", response.status, data, text)
+                    raise MIoTOAuth2Error(f"HTTP error {response.status}: {text[:200]}")
 
-                res_obj = await response.json()
+                # 使用text()然后手动解析JSON，避免ContentType错误
+                res_str = await response.text()
+                try:
+                    res_obj = json.loads(res_str)
+                except json.JSONDecodeError as e:
+                    _LOGGER.error("JSON decode error: %s, response: %s", e, res_str[:500])
+                    raise MIoTOAuth2Error(f"Invalid JSON response: {res_str[:200]}")
+
                 if (
                     not res_obj
                     or res_obj.get("code") != 0
                     or "result" not in res_obj
                     or not all(k in res_obj["result"] for k in ["access_token", "refresh_token", "expires_in"])
                 ):
-                    raise MIoTOAuth2Error(f"Invalid response: {res_obj}")
+                    _LOGGER.error("Invalid response: %s", res_str[:500])
+                    raise MIoTOAuth2Error(f"Invalid response: {res_str[:200]}")
 
                 return MIoTOauthInfo(
                     access_token=res_obj["result"]["access_token"],
