@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xiaomi-iot-manager"
+version = "1.0.0"
+description = "小米IoT设备管理SDK - 支持AI智能体控制小米智能家居设备"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["xiaomi", "iot", "miot", "smart-home", "ai-agent", "mcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Home Automation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "aiohttp>=3.8.0",
+    "cryptography>=41.0.0",
+    "pydantic>=2.0.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "websockets>=12.0",
+    "python-dotenv>=1.0.0",
+    "aiocache>=0.12.0",
+    "aiofiles>=23.0.0",
+    "pyyaml>=6.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+]
+mcp = [
+    "fastmcp>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/xiaomi-iot-manager"
+Documentation = "https://github.com/yourusername/xiaomi-iot-manager/tree/main/docs"
+Repository = "https://github.com/yourusername/xiaomi-iot-manager"
+Issues = "https://github.com/yourusername/xiaomi-iot-manager/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["miot_sdk", "core", "api", "mcp", "utils"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
