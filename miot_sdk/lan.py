@@ -154,16 +154,18 @@ class MIoTLan:
             _LOGGER.info("MIoT LAN already initialized")
             return
 
-        if not self._net_ifs:
-            _LOGGER.info("No network interfaces")
-            return
-
+        # 即使没有网络接口也创建 _internal_loop，以便其他方法可以正常工作
         self._internal_loop = asyncio.new_event_loop()
         self._thread = threading.Thread(target=self._internal_loop_thread)
         self._thread.name = "miot_lan"
         self._thread.daemon = True
         self._thread.start()
         self._init_done = True
+
+        # 如果没有网络接口，只记录日志，不进行探测
+        if not self._net_ifs:
+            _LOGGER.info("No network interfaces, LAN discovery disabled")
+            return
 
         await asyncio.sleep(self.OT_PROBE_INTERVAL_MIN / 2)
 
@@ -172,9 +174,12 @@ class MIoTLan:
         if not self._init_done:
             return
 
-        self._internal_loop.call_soon_threadsafe(self._deinit)
-        self._thread.join()
-        self._internal_loop.close()
+        if hasattr(self, '_internal_loop') and self._internal_loop:
+            self._internal_loop.call_soon_threadsafe(self._deinit)
+        if hasattr(self, '_thread') and self._thread:
+            self._thread.join()
+        if hasattr(self, '_internal_loop') and self._internal_loop:
+            self._internal_loop.close()
 
         self._lan_devices.clear()
         self._broadcast_socks.clear()
@@ -184,6 +189,9 @@ class MIoTLan:
 
     async def get_devices(self) -> Dict[str, MIoTLanDeviceInfo]:
         """获取设备列表"""
+        if not self._init_done or not hasattr(self, '_internal_loop'):
+            _LOGGER.warning("LAN client not initialized, returning empty device list")
+            return {}
         fut = asyncio.run_coroutine_threadsafe(
             self._get_devices_internal(), self._internal_loop
         )
@@ -196,7 +204,7 @@ class MIoTLan:
         handler_ctx: Any = None,
     ) -> bool:
         """注册状态变化回调"""
-        if not self._init_done:
+        if not self._init_done or not hasattr(self, '_internal_loop'):
             return False
         self._internal_loop.call_soon_threadsafe(
             self._register_status_changed,
@@ -206,7 +214,7 @@ class MIoTLan:
 
     async def unregister_status_changed(self, key: str) -> bool:
         """注销状态变化回调"""
-        if not self._init_done:
+        if not self._init_done or not hasattr(self, '_internal_loop'):
             return False
         self._internal_loop.call_soon_threadsafe(
             self._unregister_status_changed, _MIoTLanUnregDeviceData(key=key)
@@ -215,7 +223,8 @@ class MIoTLan:
 
     async def ping(self, if_name: Optional[str] = None, target_ip: Optional[str] = None) -> None:
         """发送探测"""
-        if not self._init_done:
+        if not self._init_done or not hasattr(self, '_internal_loop'):
+            _LOGGER.warning("LAN client not initialized, skipping ping")
             return
         fut = asyncio.run_coroutine_threadsafe(
             asyncio.to_thread(self._ping_internal, if_name, target_ip),
