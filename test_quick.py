@@ -12,6 +12,7 @@ import asyncio
 import uuid
 
 from miot_sdk import MIoTClient
+from miot_sdk.const import OAUTH2_REDIRECT_URI_DEFAULT
 
 
 async def quick_test():
@@ -24,7 +25,7 @@ async def quick_test():
     print("\n1. 初始化客户端...")
     client = MIoTClient(
         uuid=uuid.uuid4().hex,
-        redirect_uri="http://localhost:8000/callback",
+        redirect_uri=OAUTH2_REDIRECT_URI_DEFAULT,  # 使用官方允许的回调地址
         cache_path="./test_cache",
         cloud_server="cn",
     )

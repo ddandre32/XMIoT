@@ -7,6 +7,7 @@
 import asyncio
 import uuid
 from miot_sdk import MIoTClient
+from miot_sdk.const import OAUTH2_REDIRECT_URI_DEFAULT
 from core import DeviceManager, SceneManager, NotificationService
 
 
@@ -15,7 +16,7 @@ async def basic_example():
     # 创建客户端（使用小米官方内置OAuth配置，无需开发者注册）
     client = MIoTClient(
         uuid=uuid.uuid4().hex,
-        redirect_uri="http://localhost:8000/callback",
+        redirect_uri=OAUTH2_REDIRECT_URI_DEFAULT,  # 使用官方允许的回调地址
         cache_path="./cache",
         cloud_server="cn",
     )

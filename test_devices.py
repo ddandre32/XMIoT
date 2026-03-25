@@ -16,6 +16,7 @@ from typing import Optional
 
 from miot_sdk import MIoTClient, MIoTDeviceInfo
 from miot_sdk.types import MIoTSpecDeviceLite
+from miot_sdk.const import OAUTH2_REDIRECT_URI_DEFAULT
 
 
 class XiaomiDeviceTester:
@@ -38,7 +39,7 @@ class XiaomiDeviceTester:
         # 创建客户端
         self.client = MIoTClient(
             uuid=uuid.uuid4().hex,
-            redirect_uri="http://localhost:8000/callback",
+            redirect_uri=OAUTH2_REDIRECT_URI_DEFAULT,  # 使用官方允许的回调地址
             cache_path="./test_cache",
             cloud_server="cn",
         )

@@ -5,6 +5,7 @@ API服务示例
 import asyncio
 import uuid
 from miot_sdk import MIoTClient
+from miot_sdk.const import OAUTH2_REDIRECT_URI_DEFAULT
 from api import XiaomiIoTAPI
 
 
@@ -13,7 +14,7 @@ def run_api_server():
     # 创建MIoT客户端
     client = MIoTClient(
         uuid=uuid.uuid4().hex,
-        redirect_uri="http://localhost:8000/callback",
+        redirect_uri=OAUTH2_REDIRECT_URI_DEFAULT,  # 使用官方允许的回调地址
         cache_path="./cache",
     )
 

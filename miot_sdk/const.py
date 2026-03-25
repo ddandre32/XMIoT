@@ -12,6 +12,7 @@ OAUTH2_AUTH_URL: str = "https://account.xiaomi.com/oauth2/authorize"
 OAUTH2_API_HOST_DEFAULT: str = f"{PROJECT_CODE}.api.mijia.tech"
 
 # 允许的回调地址列表
+OAUTH2_REDIRECT_URI_DEFAULT = "https://127.0.0.1"
 OAUTH2_REDIRECT_URI_LIST = [
     "https://127.0.0.1",                                      # localhost
     f"https://{PROJECT_CODE}.api.mijia.tech/login_redirect",  # 小米官方
