@@ -167,7 +167,7 @@ class MIoTSpecProperty(BaseModel):
     """SPEC属性定义"""
     iid: int = Field(description="实例ID")
     name: str = Field(description="名称")
-    type_: str = Field(alias="type", serialization_alias="type", description="类型URN")
+    type_: Optional[str] = Field(alias="type", serialization_alias="type", default=None, description="类型URN")
     description: str = Field(description="描述")
     description_trans: str = Field(default="", description="翻译后的描述")
     format: str = Field(description="数据格式")
@@ -196,7 +196,7 @@ class MIoTSpecAction(BaseModel):
     """SPEC动作定义"""
     iid: int = Field(description="实例ID")
     name: str = Field(description="名称")
-    type_: str = Field(alias="type", serialization_alias="type", description="类型URN")
+    type_: Optional[str] = Field(alias="type", serialization_alias="type", default=None, description="类型URN")
     description: str = Field(description="描述")
     description_trans: str = Field(default="", description="翻译后的描述")
     in_: List[MIoTSpecProperty] = Field(default=[], description="输入参数")
@@ -207,7 +207,7 @@ class MIoTSpecEvent(BaseModel):
     """SPEC事件定义"""
     iid: int = Field(description="实例ID")
     name: str = Field(description="名称")
-    type_: str = Field(alias="type", serialization_alias="type", description="类型URN")
+    type_: Optional[str] = Field(alias="type", serialization_alias="type", default=None, description="类型URN")
     description: str = Field(description="描述")
     description_trans: str = Field(default="", description="翻译后的描述")
     arguments: List[MIoTSpecProperty] = Field(default=[], description="事件参数")
@@ -217,7 +217,7 @@ class MIoTSpecService(BaseModel):
     """SPEC服务定义"""
     iid: int = Field(description="实例ID")
     name: str = Field(description="名称")
-    type_: str = Field(alias="type", serialization_alias="type", description="类型URN")
+    type_: Optional[str] = Field(alias="type", serialization_alias="type", default=None, description="类型URN")
     description: str = Field(description="描述")
     description_trans: str = Field(default="", description="翻译后的描述")
     properties: List[MIoTSpecProperty] = Field(default=[], description="属性列表")
