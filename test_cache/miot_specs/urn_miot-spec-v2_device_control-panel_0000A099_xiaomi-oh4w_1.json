@@ -1,0 +1,911 @@
+{
+  "urn": "urn:miot-spec-v2:device:control-panel:0000A099:xiaomi-oh4w:1",
+  "name": "control-panel",
+  "description": "Control Panel",
+  "description_trans": "Control Panel",
+  "services": [
+    {
+      "iid": 11,
+      "name": "screen",
+      "type_": null,
+      "description": "Screen",
+      "description_trans": "Screen",
+      "properties": [
+        {
+          "iid": 3,
+          "name": "auto-screen-off",
+          "type_": null,
+          "description": "Auto Screen Off",
+          "description_trans": "Auto Screen Off",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 4,
+          "name": "auto-screen-brightness",
+          "type_": null,
+          "description": "Auto Screen Brightness",
+          "description_trans": "Auto Screen Brightness",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 5,
+          "name": "auto-screen-off-time",
+          "type_": null,
+          "description": "Auto Screen Off Time",
+          "description_trans": "Auto Screen Off Time",
+          "format": "uint16",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 15.0,
+            "max_": 600.0,
+            "step": 5.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 5,
+      "name": "intelligent-speaker",
+      "type_": null,
+      "description": "Intelligent Speaker",
+      "description_trans": "Intelligent Speaker",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "text-content",
+          "type_": null,
+          "description": "Text Content",
+          "description_trans": "Text Content",
+          "format": "string",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "silent-execution",
+          "type_": null,
+          "description": "Silent Execution",
+          "description_trans": "Silent Execution",
+          "format": "bool",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "sleep-mode",
+          "type_": null,
+          "description": "Sleep Mode",
+          "description_trans": "Sleep Mode",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "wake-up",
+          "type_": null,
+          "description": "Wake Up",
+          "description_trans": "Wake Up",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 3,
+          "name": "play-text",
+          "type_": null,
+          "description": "Play Text",
+          "description_trans": "Play Text",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "text-content",
+              "type_": null,
+              "description": "Text Content",
+              "description_trans": "Text Content",
+              "format": "string",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 4,
+          "name": "execute-text-directive",
+          "type_": null,
+          "description": "Execute Text Directive",
+          "description_trans": "Execute Text Directive",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "text-content",
+              "type_": null,
+              "description": "Text Content",
+              "description_trans": "Text Content",
+              "format": "string",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            },
+            {
+              "iid": 2,
+              "name": "silent-execution",
+              "type_": null,
+              "description": "Silent Execution",
+              "description_trans": "Silent Execution",
+              "format": "bool",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            }
+          ],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 2,
+      "name": "speaker",
+      "type_": null,
+      "description": "Speaker",
+      "description_trans": "Speaker",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "volume",
+          "type_": null,
+          "description": "Volume",
+          "description_trans": "Volume",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "percentage",
+          "value_range": {
+            "min_": 5.0,
+            "max_": 100.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "mute",
+          "type_": null,
+          "description": "Mute",
+          "description_trans": "Mute",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 4,
+      "name": "microphone",
+      "type_": null,
+      "description": "Microphone",
+      "description_trans": "Microphone",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "mute",
+          "type_": null,
+          "description": "Mute",
+          "description_trans": "Mute",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 14,
+      "name": "switch",
+      "type_": null,
+      "description": "Left Switch Service",
+      "description_trans": "Left Switch Service",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "mode",
+          "type_": null,
+          "description": "Mode",
+          "description_trans": "Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Wired And Wireless",
+              "value": 0,
+              "description": "Wired And Wireless"
+            },
+            {
+              "name": "Wireless",
+              "value": 1,
+              "description": "Wireless"
+            }
+          ]
+        },
+        {
+          "iid": 3,
+          "name": "fault",
+          "type_": null,
+          "description": "Device Fault",
+          "description_trans": "Device Fault",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "No Faults",
+              "value": 0,
+              "description": "No Faults"
+            },
+            {
+              "name": "Over Temperature",
+              "value": 1,
+              "description": "Over Temperature"
+            },
+            {
+              "name": "Overload",
+              "value": 2,
+              "description": "Overload"
+            },
+            {
+              "name": "Overload And OverTemperature",
+              "value": 3,
+              "description": "Overload And OverTemperature"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "toggle",
+          "type_": null,
+          "description": "Toggle",
+          "description_trans": "Toggle",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 23,
+      "name": "power-consumption",
+      "type_": null,
+      "description": "Power Consumption",
+      "description_trans": "Power Consumption",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "power-consumption",
+          "type_": null,
+          "description": "Power Consumption",
+          "description_trans": "Power Consumption",
+          "format": "uint16",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": "kWh",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 65535.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "electric-power",
+          "type_": null,
+          "description": "Electric Power",
+          "description_trans": "Electric Power",
+          "format": "float",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": "watt",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 2500.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 6,
+      "name": "clock",
+      "type_": null,
+      "description": "Clock",
+      "description_trans": "Clock",
+      "properties": [],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "stop-alarm",
+          "type_": null,
+          "description": "Stop Alarm",
+          "description_trans": "Stop Alarm",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 9,
+      "name": "occupancy-sensor",
+      "type_": null,
+      "description": "Occupancy Sensor",
+      "description_trans": "Occupancy Sensor",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "occupancy-status",
+          "type_": null,
+          "description": "Occupancy Status",
+          "description_trans": "Occupancy Status",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "No One",
+              "value": 0,
+              "description": "No One"
+            },
+            {
+              "name": "Moveless",
+              "value": 1,
+              "description": "Moveless"
+            },
+            {
+              "name": "In Movement",
+              "value": 2,
+              "description": "In Movement"
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "no-one-determine-time",
+          "type_": null,
+          "description": "No One Determine Time",
+          "description_trans": "No One Determine Time",
+          "format": "uint16",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "seconds",
+          "value_range": {
+            "min_": 15.0,
+            "max_": 300.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "detection-distance",
+          "type_": null,
+          "description": "Detection Distance",
+          "description_trans": "Detection Distance",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Close",
+              "value": 0,
+              "description": "Close"
+            },
+            {
+              "name": "Medium",
+              "value": 1,
+              "description": "Medium"
+            },
+            {
+              "name": "Far",
+              "value": 2,
+              "description": "Far"
+            }
+          ]
+        },
+        {
+          "iid": 4,
+          "name": "no-one-detection-sensitivity",
+          "type_": null,
+          "description": "No One Detection Sensitivity",
+          "description_trans": "No One Detection Sensitivity",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Standard",
+              "value": 0,
+              "description": "Standard"
+            },
+            {
+              "name": "Low",
+              "value": 1,
+              "description": "Low"
+            },
+            {
+              "name": "High",
+              "value": 2,
+              "description": "High"
+            }
+          ]
+        },
+        {
+          "iid": 5,
+          "name": "has-someone-detection-sensitivity",
+          "type_": null,
+          "description": "Has Someone Detection Sensitivity",
+          "description_trans": "Has Someone Detection Sensitivity",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Standard",
+              "value": 0,
+              "description": "Standard"
+            },
+            {
+              "name": "Low",
+              "value": 1,
+              "description": "Low"
+            },
+            {
+              "name": "High",
+              "value": 2,
+              "description": "High"
+            }
+          ]
+        },
+        {
+          "iid": 6,
+          "name": "enable-switch",
+          "type_": null,
+          "description": "Enable Switch",
+          "description_trans": "Enable Switch",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Disable",
+              "value": 0,
+              "description": "Disable"
+            },
+            {
+              "name": "Enable",
+              "value": 1,
+              "description": "Enable"
+            }
+          ]
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 15,
+      "name": "switch",
+      "type_": null,
+      "description": "Middle Switch Service",
+      "description_trans": "Middle Switch Service",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "mode",
+          "type_": null,
+          "description": "Mode",
+          "description_trans": "Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Wired And Wireless",
+              "value": 0,
+              "description": "Wired And Wireless"
+            },
+            {
+              "name": "Wireless",
+              "value": 1,
+              "description": "Wireless"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "toggle",
+          "type_": null,
+          "description": "Toggle",
+          "description_trans": "Toggle",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 16,
+      "name": "switch",
+      "type_": null,
+      "description": "Right Switch Service",
+      "description_trans": "Right Switch Service",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "mode",
+          "type_": null,
+          "description": "Mode",
+          "description_trans": "Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Wired And Wireless",
+              "value": 0,
+              "description": "Wired And Wireless"
+            },
+            {
+              "name": "Wireless",
+              "value": 1,
+              "description": "Wireless"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "toggle",
+          "type_": null,
+          "description": "Toggle",
+          "description_trans": "Toggle",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 20,
+      "name": "switch-sensor",
+      "type_": null,
+      "description": "Left Switch Sensor",
+      "description_trans": "Left Switch Sensor",
+      "properties": [],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "click",
+          "type_": null,
+          "description": "Click",
+          "description_trans": "Click",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 21,
+      "name": "switch-sensor",
+      "type_": null,
+      "description": "Middle Switch Sensor",
+      "description_trans": "Middle Switch Sensor",
+      "properties": [],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "click",
+          "type_": null,
+          "description": "Click",
+          "description_trans": "Click",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 22,
+      "name": "switch-sensor",
+      "type_": null,
+      "description": "Right Switch Sensor",
+      "description_trans": "Right Switch Sensor",
+      "properties": [],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "click",
+          "type_": null,
+          "description": "Click",
+          "description_trans": "Click",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 10,
+      "name": "custom-properties",
+      "type_": null,
+      "description": "custom-properties",
+      "description_trans": "custom-properties",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "proximity-screen-on",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "bool",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "touch-effects",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "bool",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 4,
+          "name": "sleep-screensaver-on",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "bool",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 5,
+          "name": "current-screen-id",
+          "type_": null,
+          "description": "current-screen-id",
+          "description_trans": "current-screen-id",
+          "format": "int32",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 1.0,
+            "max_": 256.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 6,
+          "name": "screen-text",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "string",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 7,
+          "name": "proximity-unlock",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "bool",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    }
+  ]
+}

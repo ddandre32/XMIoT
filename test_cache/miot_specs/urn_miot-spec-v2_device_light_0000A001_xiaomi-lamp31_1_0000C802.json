@@ -1,0 +1,546 @@
+{
+  "urn": "urn:miot-spec-v2:device:light:0000A001:xiaomi-lamp31:1:0000C802",
+  "name": "light",
+  "description": "xiaomi light lamp31",
+  "description_trans": "xiaomi light lamp31",
+  "services": [
+    {
+      "iid": 2,
+      "name": "light",
+      "type_": null,
+      "description": "Light",
+      "description_trans": "Light",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "brightness",
+          "type_": null,
+          "description": "Brightness",
+          "description_trans": "Brightness",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "percentage",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 100.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "color-temperature",
+          "type_": null,
+          "description": "Color Temperature",
+          "description_trans": "Color Temperature",
+          "format": "uint16",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "kelvin",
+          "value_range": {
+            "min_": 2700.0,
+            "max_": 5100.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 12,
+          "name": "default-power-on-state",
+          "type_": null,
+          "description": "Default Power On State",
+          "description_trans": "Default Power On State",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Default",
+              "value": 0,
+              "description": "Default"
+            },
+            {
+              "name": "On",
+              "value": 1,
+              "description": "On"
+            },
+            {
+              "name": "Off",
+              "value": 2,
+              "description": "Off"
+            }
+          ]
+        },
+        {
+          "iid": 13,
+          "name": "light-on-gradient-time",
+          "type_": null,
+          "description": "Light On Gradient Time",
+          "description_trans": "Light On Gradient Time",
+          "format": "float",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "seconds",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 5.0,
+            "step": 0.5
+          },
+          "value_list": null
+        },
+        {
+          "iid": 14,
+          "name": "light-off-gradient-time",
+          "type_": null,
+          "description": "Light Off Gradient Time",
+          "description_trans": "Light Off Gradient Time",
+          "format": "float",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "seconds",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 5.0,
+            "step": 0.5
+          },
+          "value_list": null
+        },
+        {
+          "iid": 15,
+          "name": "mode",
+          "type_": null,
+          "description": "Mode",
+          "description_trans": "Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Auto",
+              "value": 0,
+              "description": "Auto"
+            },
+            {
+              "name": "Reading",
+              "value": 1,
+              "description": "Reading"
+            },
+            {
+              "name": "Computer",
+              "value": 2,
+              "description": "Computer"
+            },
+            {
+              "name": "Warmth",
+              "value": 3,
+              "description": "Warmth"
+            },
+            {
+              "name": "Leisure",
+              "value": 4,
+              "description": "Leisure"
+            },
+            {
+              "name": "Office",
+              "value": 5,
+              "description": "Office"
+            },
+            {
+              "name": "Entertainment",
+              "value": 6,
+              "description": "Entertainment"
+            }
+          ]
+        },
+        {
+          "iid": 16,
+          "name": "brightness-delta",
+          "type_": null,
+          "description": "Brightness Delta",
+          "description_trans": "Brightness Delta",
+          "format": "uint8",
+          "access": [],
+          "unit": "percentage",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 30.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 17,
+          "name": "color-temperature-delta",
+          "type_": null,
+          "description": "Color Temperature Delta",
+          "description_trans": "Color Temperature Delta",
+          "format": "uint16",
+          "access": [],
+          "unit": "kelvin",
+          "value_range": {
+            "min_": 200.0,
+            "max_": 2400.0,
+            "step": 100.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "toggle",
+          "type_": null,
+          "description": "Toggle",
+          "description_trans": "Toggle",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 2,
+          "name": "brightness-up",
+          "type_": null,
+          "description": "Brightness Up",
+          "description_trans": "Brightness Up",
+          "in_": [
+            {
+              "iid": 16,
+              "name": "brightness-delta",
+              "type_": null,
+              "description": "Brightness Delta",
+              "description_trans": "Brightness Delta",
+              "format": "uint8",
+              "access": [],
+              "unit": "percentage",
+              "value_range": {
+                "min_": 1.0,
+                "max_": 30.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 3,
+          "name": "brightness-down",
+          "type_": null,
+          "description": "Brightness Down",
+          "description_trans": "Brightness Down",
+          "in_": [
+            {
+              "iid": 16,
+              "name": "brightness-delta",
+              "type_": null,
+              "description": "Brightness Delta",
+              "description_trans": "Brightness Delta",
+              "format": "uint8",
+              "access": [],
+              "unit": "percentage",
+              "value_range": {
+                "min_": 1.0,
+                "max_": 30.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 4,
+          "name": "color-temperature-up",
+          "type_": null,
+          "description": "Color Temperature Up",
+          "description_trans": "Color Temperature Up",
+          "in_": [
+            {
+              "iid": 17,
+              "name": "color-temperature-delta",
+              "type_": null,
+              "description": "Color Temperature Delta",
+              "description_trans": "Color Temperature Delta",
+              "format": "uint16",
+              "access": [],
+              "unit": "kelvin",
+              "value_range": {
+                "min_": 200.0,
+                "max_": 2400.0,
+                "step": 100.0
+              },
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 5,
+          "name": "color-temperature-down",
+          "type_": null,
+          "description": "Color Temperature Down",
+          "description_trans": "Color Temperature Down",
+          "in_": [
+            {
+              "iid": 17,
+              "name": "color-temperature-delta",
+              "type_": null,
+              "description": "Color Temperature Delta",
+              "description_trans": "Color Temperature Delta",
+              "format": "uint16",
+              "access": [],
+              "unit": "kelvin",
+              "value_range": {
+                "min_": 200.0,
+                "max_": 2400.0,
+                "step": 100.0
+              },
+              "value_list": null
+            }
+          ],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 4,
+      "name": "delay",
+      "type_": null,
+      "description": "Delay",
+      "description_trans": "Delay",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "delay",
+          "type_": null,
+          "description": "Delay",
+          "description_trans": "Delay",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "delay-time",
+          "type_": null,
+          "description": "Delay Time",
+          "description_trans": "Delay Time",
+          "format": "uint32",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 60.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "delay-remain-time",
+          "type_": null,
+          "description": "Delay Remain Time",
+          "description_trans": "Delay Remain Time",
+          "format": "uint32",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 60.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 5,
+      "name": "focus-mode",
+      "type_": null,
+      "description": "Focus Mode",
+      "description_trans": "Focus Mode",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "focus-time",
+          "type_": null,
+          "description": "Focus Time",
+          "description_trans": "Focus Time",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 90.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "rest-time",
+          "type_": null,
+          "description": "Rest Time",
+          "description_trans": "Rest Time",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 90.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 4,
+          "name": "recycle-number",
+          "type_": null,
+          "description": "Recycle Number",
+          "description_trans": "Recycle Number",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 1.0,
+            "max_": 60.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 6,
+      "name": "yeelight",
+      "type_": null,
+      "description": "yeelight",
+      "description_trans": "yeelight",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on-then-delayoff",
+          "type_": null,
+          "description": "on-then-delayoff",
+          "description_trans": "on-then-delayoff",
+          "format": "uint8",
+          "access": [
+            "write"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 60.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "bright-circle",
+          "type_": null,
+          "description": "bright-circle",
+          "description_trans": "bright-circle",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 5,
+          "name": "ct-circle",
+          "type_": null,
+          "description": "ct-circle",
+          "description_trans": "ct-circle",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}

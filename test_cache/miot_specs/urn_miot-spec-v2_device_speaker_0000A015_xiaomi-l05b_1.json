@@ -1,0 +1,447 @@
+{
+  "urn": "urn:miot-spec-v2:device:speaker:0000A015:xiaomi-l05b:1",
+  "name": "speaker",
+  "description": "Speaker",
+  "description_trans": "Speaker",
+  "services": [
+    {
+      "iid": 2,
+      "name": "speaker",
+      "type_": null,
+      "description": "Speaker",
+      "description_trans": "Speaker",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "volume",
+          "type_": null,
+          "description": "Volume",
+          "description_trans": "Volume",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "percentage",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 100.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "mute",
+          "type_": null,
+          "description": "Mute",
+          "description_trans": "Mute",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 3,
+      "name": "play-control",
+      "type_": null,
+      "description": "Play Control",
+      "description_trans": "Play Control",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "playing-state",
+          "type_": null,
+          "description": "Playing State",
+          "description_trans": "Playing State",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Playing",
+              "value": 1,
+              "description": "Playing"
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "seek-time",
+          "type_": null,
+          "description": "Seek Time",
+          "description_trans": "Seek Time",
+          "format": "int16",
+          "access": [],
+          "unit": "seconds",
+          "value_range": {
+            "min_": -30000.0,
+            "max_": 30000.0,
+            "step": 10.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "play-loop-mode",
+          "type_": null,
+          "description": "Play Loop Mode",
+          "description_trans": "Play Loop Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Single Cycle",
+              "value": 1,
+              "description": "Single Cycle"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "seek",
+          "type_": null,
+          "description": "Seek",
+          "description_trans": "Seek",
+          "in_": [
+            {
+              "iid": 2,
+              "name": "seek-time",
+              "type_": null,
+              "description": "Seek Time",
+              "description_trans": "Seek Time",
+              "format": "int16",
+              "access": [],
+              "unit": "seconds",
+              "value_range": {
+                "min_": -30000.0,
+                "max_": 30000.0,
+                "step": 10.0
+              },
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 2,
+          "name": "play",
+          "type_": null,
+          "description": "Play",
+          "description_trans": "Play",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 3,
+          "name": "pause",
+          "type_": null,
+          "description": "Pause",
+          "description_trans": "Pause",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 4,
+          "name": "stop",
+          "type_": null,
+          "description": "Stop",
+          "description_trans": "Stop",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 5,
+          "name": "previous",
+          "type_": null,
+          "description": "Previous",
+          "description_trans": "Previous",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 6,
+          "name": "next",
+          "type_": null,
+          "description": "Next",
+          "description_trans": "Next",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 4,
+      "name": "microphone",
+      "type_": null,
+      "description": "Microphone",
+      "description_trans": "Microphone",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "mute",
+          "type_": null,
+          "description": "Mute",
+          "description_trans": "Mute",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 5,
+      "name": "intelligent-speaker",
+      "type_": null,
+      "description": "Intelligent Speaker",
+      "description_trans": "Intelligent Speaker",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "text-content",
+          "type_": null,
+          "description": "Text Content",
+          "description_trans": "Text Content",
+          "format": "string",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "silent-execution",
+          "type_": null,
+          "description": "Silent Execution",
+          "description_trans": "Silent Execution",
+          "format": "bool",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "wake-up",
+          "type_": null,
+          "description": "Wake Up",
+          "description_trans": "Wake Up",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 2,
+          "name": "play-radio",
+          "type_": null,
+          "description": "Play Radio",
+          "description_trans": "Play Radio",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 3,
+          "name": "play-text",
+          "type_": null,
+          "description": "Play Text",
+          "description_trans": "Play Text",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "text-content",
+              "type_": null,
+              "description": "Text Content",
+              "description_trans": "Text Content",
+              "format": "string",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 4,
+          "name": "execute-text-directive",
+          "type_": null,
+          "description": "Execute Text Directive",
+          "description_trans": "Execute Text Directive",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "text-content",
+              "type_": null,
+              "description": "Text Content",
+              "description_trans": "Text Content",
+              "format": "string",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            },
+            {
+              "iid": 2,
+              "name": "silent-execution",
+              "type_": null,
+              "description": "Silent Execution",
+              "description_trans": "Silent Execution",
+              "format": "bool",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 5,
+          "name": "play-music",
+          "type_": null,
+          "description": "Play Music",
+          "description_trans": "Play Music",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 6,
+      "name": "clock",
+      "type_": null,
+      "description": "Clock",
+      "description_trans": "Clock",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "status",
+          "type_": null,
+          "description": "Status",
+          "description_trans": "Status",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Idle",
+              "value": 1,
+              "description": "Idle"
+            },
+            {
+              "name": "Busy",
+              "value": 2,
+              "description": "Busy"
+            }
+          ]
+        },
+        {
+          "iid": 3,
+          "name": "fault",
+          "type_": null,
+          "description": "Device Fault",
+          "description_trans": "Device Fault",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "No Faults",
+              "value": 0,
+              "description": "No Faults"
+            }
+          ]
+        },
+        {
+          "iid": 4,
+          "name": "ringtone",
+          "type_": null,
+          "description": "Ringtone",
+          "description_trans": "Ringtone",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 1.0,
+            "max_": 5.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "stop-alarm",
+          "type_": null,
+          "description": "Stop Alarm",
+          "description_trans": "Stop Alarm",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}

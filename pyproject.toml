@@ -12,7 +12,7 @@ requires-python = ">=3.9"
 authors = [
     {name = "Your Name", email = "your.email@example.com"}
 ]
-keywords = ["xiaomi", "iot", "miot", "smart-home", "ai-agent", "mcp"]
+keywords = ["xiaomi", "iot", "miot", "smart-home", "ai-agent", "cli"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -30,14 +30,8 @@ dependencies = [
     "aiohttp>=3.8.0",
     "cryptography>=41.0.0",
     "pydantic>=2.0.0",
-    "fastapi>=0.104.0",
-    "uvicorn>=0.24.0",
-    "websockets>=12.0",
-    "python-dotenv>=1.0.0",
-    "aiocache>=0.12.0",
-    "aiofiles>=23.0.0",
+    "click>=8.0.0",
     "pyyaml>=6.0.0",
-    "httpx>=0.25.0",
 ]
 
 [project.optional-dependencies]
@@ -50,9 +44,9 @@ dev = [
     "mypy>=1.5.0",
     "ruff>=0.1.0",
 ]
-mcp = [
-    "fastmcp>=1.0.0",
-]
+
+[project.scripts]
+miot = "cli.main:main"
 
 [project.urls]
 Homepage = "https://github.com/yourusername/xiaomi-iot-manager"
@@ -61,7 +55,7 @@ Repository = "https://github.com/yourusername/xiaomi-iot-manager"
 Issues = "https://github.com/yourusername/xiaomi-iot-manager/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["miot_sdk", "core", "api", "mcp", "utils"]
+packages = ["miot_sdk", "cli"]
 
 [tool.black]
 line-length = 100

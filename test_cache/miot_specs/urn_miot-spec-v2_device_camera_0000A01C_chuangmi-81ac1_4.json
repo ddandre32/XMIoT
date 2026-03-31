@@ -1,0 +1,2268 @@
+{
+  "urn": "urn:miot-spec-v2:device:camera:0000A01C:chuangmi-81ac1:4",
+  "name": "camera",
+  "description": "Camera",
+  "description_trans": "Camera",
+  "services": [
+    {
+      "iid": 2,
+      "name": "camera-control",
+      "type_": null,
+      "description": "Camera Control",
+      "description_trans": "Camera Control",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "image-rollover",
+          "type_": null,
+          "description": "Image Rollover",
+          "description_trans": "Image Rollover",
+          "format": "uint16",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "arcdegrees",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 180.0,
+            "step": 180.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "night-shot",
+          "type_": null,
+          "description": "Night Shot",
+          "description_trans": "Night Shot",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "On",
+              "value": 0,
+              "description": "On"
+            },
+            {
+              "name": "Off",
+              "value": 1,
+              "description": "Off"
+            },
+            {
+              "name": "Auto",
+              "value": 2,
+              "description": "Auto"
+            }
+          ]
+        },
+        {
+          "iid": 4,
+          "name": "time-watermark",
+          "type_": null,
+          "description": "Time Watermark",
+          "description_trans": "Time Watermark",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 6,
+          "name": "glimmer-full-color",
+          "type_": null,
+          "description": "Glimmer Full Color",
+          "description_trans": "Glimmer Full Color",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 7,
+          "name": "recording-mode",
+          "type_": null,
+          "description": "Recording Mode",
+          "description_trans": "Recording Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "No Record",
+              "value": 0,
+              "description": "No Record"
+            },
+            {
+              "name": "Motion Record",
+              "value": 1,
+              "description": "Motion Record"
+            },
+            {
+              "name": "All Record",
+              "value": 2,
+              "description": "All Record"
+            }
+          ]
+        },
+        {
+          "iid": 10,
+          "name": "ptz-camera",
+          "type_": null,
+          "description": "Ptz Camera",
+          "description_trans": "Ptz Camera",
+          "format": "bool",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 11,
+          "name": "human-tracking",
+          "type_": null,
+          "description": "Human Tracking",
+          "description_trans": "Human Tracking",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 13,
+          "name": "hdr-mode",
+          "type_": null,
+          "description": "High Dynamic Range Mode",
+          "description_trans": "High Dynamic Range Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "OFF",
+              "value": 0,
+              "description": "OFF"
+            },
+            {
+              "name": "ON",
+              "value": 1,
+              "description": "ON"
+            },
+            {
+              "name": "AUTO",
+              "value": 2,
+              "description": "AUTO"
+            }
+          ]
+        },
+        {
+          "iid": 14,
+          "name": "image-distortion-correction",
+          "type_": null,
+          "description": "Image Distortion Correction",
+          "description_trans": "Image Distortion Correction",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "ir-turned-on",
+          "type_": null,
+          "description": "Ir Turned On",
+          "description_trans": "Ir Turned On",
+          "arguments": []
+        },
+        {
+          "iid": 2,
+          "name": "ir-turned-off",
+          "type_": null,
+          "description": "Ir Turned Off",
+          "description_trans": "Ir Turned Off",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 3,
+      "name": "indicator-light",
+      "type_": null,
+      "description": "Indicator Light",
+      "description_trans": "Indicator Light",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "on",
+          "type_": null,
+          "description": "Switch Status",
+          "description_trans": "Switch Status",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 4,
+      "name": "memory-card-management",
+      "type_": null,
+      "description": "Memory Card Management",
+      "description_trans": "Memory Card Management",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "status",
+          "type_": null,
+          "description": "Status",
+          "description_trans": "Status",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Normal",
+              "value": 0,
+              "description": "Normal"
+            },
+            {
+              "name": "Non Existent",
+              "value": 1,
+              "description": "Non Existent"
+            },
+            {
+              "name": "Full",
+              "value": 2,
+              "description": "Full"
+            },
+            {
+              "name": "Formatting",
+              "value": 4,
+              "description": "Formatting"
+            },
+            {
+              "name": "Ejected",
+              "value": 5,
+              "description": "Ejected"
+            },
+            {
+              "name": "Fixing",
+              "value": 6,
+              "description": "Fixing"
+            },
+            {
+              "name": "Ejecting",
+              "value": 7,
+              "description": "Ejecting"
+            },
+            {
+              "name": "Uninitialized",
+              "value": 8,
+              "description": "Uninitialized"
+            },
+            {
+              "name": "Not Enough Space",
+              "value": 9,
+              "description": "Not Enough Space"
+            },
+            {
+              "name": "File Err",
+              "value": 10,
+              "description": "File Err"
+            },
+            {
+              "name": "Incompatible",
+              "value": 11,
+              "description": "Incompatible"
+            },
+            {
+              "name": "Broken",
+              "value": 3,
+              "description": "Broken"
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "storage-total-space",
+          "type_": null,
+          "description": "Storage Total Space",
+          "description_trans": "Storage Total Space",
+          "format": "uint32",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 0.0,
+            "max_": 2147483648.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "storage-free-space",
+          "type_": null,
+          "description": "Storage Free Space",
+          "description_trans": "Storage Free Space",
+          "format": "uint32",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 0.0,
+            "max_": 2147483648.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 4,
+          "name": "storage-used-space",
+          "type_": null,
+          "description": "Storage Used Space",
+          "description_trans": "Storage Used Space",
+          "format": "uint32",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 0.0,
+            "max_": 2147483648.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 5,
+          "name": "dialog-ejected",
+          "type_": null,
+          "description": "Dialog Ejected",
+          "description_trans": "Dialog Ejected",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 6,
+          "name": "remaining-recording-duration",
+          "type_": null,
+          "description": "Remaining Recording Duration",
+          "description_trans": "Remaining Recording Duration",
+          "format": "uint32",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 2147483648.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "format",
+          "type_": null,
+          "description": "Format",
+          "description_trans": "Format",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 2,
+          "name": "pop-up",
+          "type_": null,
+          "description": "Pop Up",
+          "description_trans": "Pop Up",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 5,
+      "name": "motion-detection",
+      "type_": null,
+      "description": "Motion Detection",
+      "description_trans": "Motion Detection",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "motion-detection",
+          "type_": null,
+          "description": "Motion Detection",
+          "description_trans": "Motion Detection",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "alarm-interval",
+          "type_": null,
+          "description": "Alarm Interval",
+          "description_trans": "Alarm Interval",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 30.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "detection-sensitivity",
+          "type_": null,
+          "description": "Detection Sensitivity",
+          "description_trans": "Detection Sensitivity",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Low",
+              "value": 0,
+              "description": "Low"
+            },
+            {
+              "name": "High",
+              "value": 2,
+              "description": "High"
+            }
+          ]
+        },
+        {
+          "iid": 4,
+          "name": "motion-detection-start-time",
+          "type_": null,
+          "description": "Motion Detection Start Time",
+          "description_trans": "Motion Detection Start Time",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 5,
+          "name": "motion-detection-end-time",
+          "type_": null,
+          "description": "Motion Detection End Time",
+          "description_trans": "Motion Detection End Time",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 6,
+      "name": "speaker",
+      "type_": null,
+      "description": "Speaker",
+      "description_trans": "Speaker",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "mute",
+          "type_": null,
+          "description": "Mute",
+          "description_trans": "Mute",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "volume",
+          "type_": null,
+          "description": "Volume",
+          "description_trans": "Volume",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "percentage",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 100.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 8,
+      "name": "ai-detection",
+      "type_": null,
+      "description": "Ai Detection",
+      "description_trans": "Ai Detection",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "identity-id",
+          "type_": null,
+          "description": "Identity Id",
+          "description_trans": "Identity Id",
+          "format": "string",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "pets-type",
+          "type_": null,
+          "description": "Pets Type",
+          "description_trans": "Pets Type",
+          "format": "uint8",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Cat",
+              "value": 0,
+              "description": "Cat"
+            },
+            {
+              "name": "Dog",
+              "value": 1,
+              "description": "Dog"
+            }
+          ]
+        },
+        {
+          "iid": 4,
+          "name": "face-detection-switch",
+          "type_": null,
+          "description": "Face Detection Switch",
+          "description_trans": "Face Detection Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 5,
+          "name": "pet-detection-switch",
+          "type_": null,
+          "description": "Pet Detection Switch",
+          "description_trans": "Pet Detection Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 6,
+          "name": "hand-gesture-detection-switch",
+          "type_": null,
+          "description": "Hand Gesture Detection Switch",
+          "description_trans": "Hand Gesture Detection Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 7,
+          "name": "hand-gesture-name",
+          "type_": null,
+          "description": "Hand Gesture Name",
+          "description_trans": "Hand Gesture Name",
+          "format": "uint8",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Yeah",
+              "value": 0,
+              "description": "Yeah"
+            },
+            {
+              "name": "Ok",
+              "value": 1,
+              "description": "Ok"
+            },
+            {
+              "name": "Palm",
+              "value": 2,
+              "description": "Palm"
+            }
+          ]
+        },
+        {
+          "iid": 8,
+          "name": "human-detection",
+          "type_": null,
+          "description": "Human Detection",
+          "description_trans": "Human Detection",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 9,
+          "name": "move-detection",
+          "type_": null,
+          "description": "Move Detection",
+          "description_trans": "Move Detection",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 10,
+          "name": "babycry-detection-switch",
+          "type_": null,
+          "description": "Babycry Detection Switch",
+          "description_trans": "Babycry Detection Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 11,
+          "name": "current-time",
+          "type_": null,
+          "description": "Current Time",
+          "description_trans": "Current Time",
+          "format": "uint32",
+          "access": [],
+          "unit": null,
+          "value_range": {
+            "min_": 0.0,
+            "max_": 4294967295.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 20,
+          "name": "sound-detection-switch",
+          "type_": null,
+          "description": "Sound Detection Switch",
+          "description_trans": "Sound Detection Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 21,
+          "name": "pet-tracking",
+          "type_": null,
+          "description": "Pet Tracking",
+          "description_trans": "Pet Tracking",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 22,
+          "name": "detection-sensitivity",
+          "type_": null,
+          "description": "Sound Detection Sensitivity",
+          "description_trans": "Sound Detection Sensitivity",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Low",
+              "value": 0,
+              "description": "Low"
+            },
+            {
+              "name": "Middle",
+              "value": 1,
+              "description": "Middle"
+            },
+            {
+              "name": "High",
+              "value": 2,
+              "description": "High"
+            }
+          ]
+        },
+        {
+          "iid": 23,
+          "name": "detection-sensitivity",
+          "type_": null,
+          "description": "Move Detection Sensitivity",
+          "description_trans": "Move Detection Sensitivity",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Low",
+              "value": 0,
+              "description": "Low"
+            },
+            {
+              "name": "Middle",
+              "value": 1,
+              "description": "Middle"
+            },
+            {
+              "name": "High",
+              "value": 2,
+              "description": "High"
+            }
+          ]
+        },
+        {
+          "iid": 24,
+          "name": "human-close-up",
+          "type_": null,
+          "description": "Human Close Up",
+          "description_trans": "Human Close Up",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 2,
+          "name": "someone-appeared",
+          "type_": null,
+          "description": "Someone Appeared",
+          "description_trans": "Someone Appeared",
+          "arguments": [
+            {
+              "iid": 1,
+              "name": "identity-id",
+              "type_": null,
+              "description": "Identity Id",
+              "description_trans": "Identity Id",
+              "format": "string",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            },
+            {
+              "iid": 11,
+              "name": "current-time",
+              "type_": null,
+              "description": "Current Time",
+              "description_trans": "Current Time",
+              "format": "uint32",
+              "access": [],
+              "unit": null,
+              "value_range": {
+                "min_": 0.0,
+                "max_": 4294967295.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ]
+        },
+        {
+          "iid": 6,
+          "name": "pet-appeared",
+          "type_": null,
+          "description": "Pet Appeared",
+          "description_trans": "Pet Appeared",
+          "arguments": [
+            {
+              "iid": 2,
+              "name": "pets-type",
+              "type_": null,
+              "description": "Pets Type",
+              "description_trans": "Pets Type",
+              "format": "uint8",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": [
+                {
+                  "name": "Cat",
+                  "value": 0,
+                  "description": "Cat"
+                },
+                {
+                  "name": "Dog",
+                  "value": 1,
+                  "description": "Dog"
+                }
+              ]
+            },
+            {
+              "iid": 11,
+              "name": "current-time",
+              "type_": null,
+              "description": "Current Time",
+              "description_trans": "Current Time",
+              "format": "uint32",
+              "access": [],
+              "unit": null,
+              "value_range": {
+                "min_": 0.0,
+                "max_": 4294967295.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ]
+        },
+        {
+          "iid": 7,
+          "name": "detected-babycry-event",
+          "type_": null,
+          "description": "Detected Babycry Event",
+          "description_trans": "Detected Babycry Event",
+          "arguments": []
+        },
+        {
+          "iid": 10,
+          "name": "object-motion",
+          "type_": null,
+          "description": "Object Motion",
+          "description_trans": "Object Motion",
+          "arguments": []
+        },
+        {
+          "iid": 11,
+          "name": "louder-sound",
+          "type_": null,
+          "description": "Louder Sound",
+          "description_trans": "Louder Sound",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 9,
+      "name": "p2p-stream",
+      "type_": null,
+      "description": "PP Stream",
+      "description_trans": "PP Stream",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "talk-mode",
+          "type_": null,
+          "description": "Talk Mode",
+          "description_trans": "Talk Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Two-way",
+              "value": 0,
+              "description": "Two-way"
+            },
+            {
+              "name": "One-way",
+              "value": 1,
+              "description": "One-way"
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "audio-codec",
+          "type_": null,
+          "description": "Audio Codec",
+          "description_trans": "Audio Codec",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "G711A",
+              "value": 0,
+              "description": "G711A"
+            },
+            {
+              "name": "ACC",
+              "value": 1,
+              "description": "ACC"
+            },
+            {
+              "name": "OPUS",
+              "value": 2,
+              "description": "OPUS"
+            },
+            {
+              "name": "PCM",
+              "value": 3,
+              "description": "PCM"
+            }
+          ]
+        },
+        {
+          "iid": 3,
+          "name": "audio-bit-width",
+          "type_": null,
+          "description": "Audio Bit Width",
+          "description_trans": "Audio Bit Width",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "8",
+              "value": 0,
+              "description": "8"
+            },
+            {
+              "name": "16",
+              "value": 1,
+              "description": "16"
+            }
+          ]
+        },
+        {
+          "iid": 4,
+          "name": "video-codec",
+          "type_": null,
+          "description": "Video Codec",
+          "description_trans": "Video Codec",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "H264",
+              "value": 0,
+              "description": "H264"
+            },
+            {
+              "name": "H265",
+              "value": 1,
+              "description": "H265"
+            }
+          ]
+        },
+        {
+          "iid": 5,
+          "name": "audio-smp-rate",
+          "type_": null,
+          "description": "Audio Smp Rate",
+          "description_trans": "Audio Smp Rate",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "8",
+              "value": 0,
+              "description": "8"
+            },
+            {
+              "name": "16",
+              "value": 1,
+              "description": "16"
+            },
+            {
+              "name": "32",
+              "value": 2,
+              "description": "32"
+            },
+            {
+              "name": "48",
+              "value": 3,
+              "description": "48"
+            }
+          ]
+        },
+        {
+          "iid": 6,
+          "name": "audio-channel",
+          "type_": null,
+          "description": "Audio Channel",
+          "description_trans": "Audio Channel",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Single Channel",
+              "value": 0,
+              "description": "Single Channel"
+            },
+            {
+              "name": "Dual Channel",
+              "value": 1,
+              "description": "Dual Channel"
+            }
+          ]
+        },
+        {
+          "iid": 7,
+          "name": "talk-codec",
+          "type_": null,
+          "description": "Talk Codec",
+          "description_trans": "Talk Codec",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "G711A",
+              "value": 0,
+              "description": "G711A"
+            },
+            {
+              "name": "ACC",
+              "value": 1,
+              "description": "ACC"
+            },
+            {
+              "name": "OPUS",
+              "value": 2,
+              "description": "OPUS"
+            },
+            {
+              "name": "PCM",
+              "value": 3,
+              "description": "PCM"
+            }
+          ]
+        },
+        {
+          "iid": 10,
+          "name": "resolution-types",
+          "type_": null,
+          "description": "Resolution Types",
+          "description_trans": "Resolution Types",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "480",
+              "value": 1,
+              "description": "480"
+            },
+            {
+              "name": "1080",
+              "value": 3,
+              "description": "1080"
+            },
+            {
+              "name": "3840",
+              "value": 9,
+              "description": "3840"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "start-p2p-stream",
+          "type_": null,
+          "description": "Start P2P Stream",
+          "description_trans": "Start P2P Stream",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 2,
+          "name": "stop-stream",
+          "type_": null,
+          "description": "Stop Camera Stream",
+          "description_trans": "Stop Camera Stream",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 3,
+          "name": "upload-video",
+          "type_": null,
+          "description": "Upload Video",
+          "description_trans": "Upload Video",
+          "in_": [],
+          "out": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "iid": 10,
+      "name": "camera-fav-area",
+      "type_": null,
+      "description": "Camera Fav Area",
+      "description_trans": "Camera Fav Area",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "fav-area",
+          "type_": null,
+          "description": "Fav Area",
+          "description_trans": "Fav Area",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "active-fav-area",
+          "type_": null,
+          "description": "Active Fav Area",
+          "description_trans": "Active Fav Area",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 0.0,
+            "max_": 64.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "into-fav-area",
+          "type_": null,
+          "description": "Into Fav Area",
+          "description_trans": "Into Fav Area",
+          "arguments": [
+            {
+              "iid": 2,
+              "name": "active-fav-area",
+              "type_": null,
+              "description": "Active Fav Area",
+              "description_trans": "Active Fav Area",
+              "format": "uint8",
+              "access": [
+                "read",
+                "write",
+                "notify"
+              ],
+              "unit": null,
+              "value_range": {
+                "min_": 0.0,
+                "max_": 64.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "out-fav-area",
+          "type_": null,
+          "description": "Out Fav Area",
+          "description_trans": "Out Fav Area",
+          "arguments": [
+            {
+              "iid": 2,
+              "name": "active-fav-area",
+              "type_": null,
+              "description": "Active Fav Area",
+              "description_trans": "Active Fav Area",
+              "format": "uint8",
+              "access": [
+                "read",
+                "write",
+                "notify"
+              ],
+              "unit": null,
+              "value_range": {
+                "min_": 0.0,
+                "max_": 64.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iid": 11,
+      "name": "cruise",
+      "type_": null,
+      "description": "Cruise",
+      "description_trans": "Cruise",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "cruise-switch",
+          "type_": null,
+          "description": "Cruise Switch",
+          "description_trans": "Cruise Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "cruise-cycle",
+          "type_": null,
+          "description": "Cruise Cycle",
+          "description_trans": "Cruise Cycle",
+          "format": "uint16",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 0.0,
+            "max_": 1440.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "cruise-start-time",
+          "type_": null,
+          "description": "Cruise Start Time",
+          "description_trans": "Cruise Start Time",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 4,
+          "name": "cruise-end-time",
+          "type_": null,
+          "description": "Cruise End Time",
+          "description_trans": "Cruise End Time",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 5,
+          "name": "cruise-repetition",
+          "type_": null,
+          "description": "Cruise Repetition",
+          "description_trans": "Cruise Repetition",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 6,
+          "name": "cruise-mode",
+          "type_": null,
+          "description": "Cruise Mode",
+          "description_trans": "Cruise Mode",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Panoramic Cruise",
+              "value": 0,
+              "description": "Panoramic Cruise"
+            },
+            {
+              "name": "Fixed Point Cruise",
+              "value": 1,
+              "description": "Fixed Point Cruise"
+            }
+          ]
+        },
+        {
+          "iid": 7,
+          "name": "cruise-position",
+          "type_": null,
+          "description": "Cruise Position",
+          "description_trans": "Cruise Position",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "cruise-started",
+          "type_": null,
+          "description": "Cruise Started",
+          "description_trans": "Cruise Started",
+          "arguments": []
+        },
+        {
+          "iid": 2,
+          "name": "cruise-ended",
+          "type_": null,
+          "description": "Cruise Ended",
+          "description_trans": "Cruise Ended",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 12,
+      "name": "key-call",
+      "type_": null,
+      "description": "Key Call",
+      "description_trans": "Key Call",
+      "properties": [
+        {
+          "iid": 2,
+          "name": "key-call-status",
+          "type_": null,
+          "description": "Key Call Status",
+          "description_trans": "Key Call Status",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Idle Hang Up",
+              "value": 0,
+              "description": "Idle Hang Up"
+            },
+            {
+              "name": "Calling",
+              "value": 1,
+              "description": "Calling"
+            },
+            {
+              "name": "Busy",
+              "value": 2,
+              "description": "Busy"
+            }
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "key-call-start",
+          "type_": null,
+          "description": "Key Call Start",
+          "description_trans": "Key Call Start",
+          "arguments": []
+        },
+        {
+          "iid": 2,
+          "name": "phone-call-start",
+          "type_": null,
+          "description": "Phone Call Start",
+          "description_trans": "Phone Call Start",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 14,
+      "name": "camera-ipc-cloud",
+      "type_": null,
+      "description": "Camera Ipc Cloud",
+      "description_trans": "Camera Ipc Cloud",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "gop-value",
+          "type_": null,
+          "description": "Gop Value",
+          "description_trans": "Gop Value",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": "seconds",
+          "value_range": {
+            "min_": 3.0,
+            "max_": 10.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "vip-offset-num",
+          "type_": null,
+          "description": "Vip Offset Num",
+          "description_trans": "Vip Offset Num",
+          "format": "uint16",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 1.0,
+            "max_": 600.0,
+            "step": 1.0
+          },
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "non-vip-offset-num",
+          "type_": null,
+          "description": "Non Vip Offset Num",
+          "description_trans": "Non Vip Offset Num",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": {
+            "min_": 1.0,
+            "max_": 3.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 15,
+      "name": "virtual-fence",
+      "type_": null,
+      "description": "Virtual Fence",
+      "description_trans": "Virtual Fence",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "virtual-fence-switch",
+          "type_": null,
+          "description": "Virtual Fence Switch",
+          "description_trans": "Virtual Fence Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "virtual-fence-area",
+          "type_": null,
+          "description": "Virtual Fence Area",
+          "description_trans": "Virtual Fence Area",
+          "format": "string",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "people-fence-in",
+          "type_": null,
+          "description": "People Fence In Switch",
+          "description_trans": "People Fence In Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 4,
+          "name": "people-fence-out",
+          "type_": null,
+          "description": "People Fence Out Switch",
+          "description_trans": "People Fence Out Switch",
+          "format": "bool",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "people-fence-in",
+          "type_": null,
+          "description": "People Fence In",
+          "description_trans": "People Fence In",
+          "arguments": []
+        },
+        {
+          "iid": 2,
+          "name": "people-fence-out",
+          "type_": null,
+          "description": "People Fence Out",
+          "description_trans": "People Fence Out",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 17,
+      "name": "nas",
+      "type_": null,
+      "description": "NAS",
+      "description_trans": "NAS",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "status",
+          "type_": null,
+          "description": "Status",
+          "description_trans": "Status",
+          "format": "uint8",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Idle",
+              "value": 1,
+              "description": "Idle"
+            },
+            {
+              "name": "Busy",
+              "value": 2,
+              "description": "Busy"
+            },
+            {
+              "name": "Delay",
+              "value": 3,
+              "description": "Delay"
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "nas-direct-storage",
+          "type_": null,
+          "description": "Nas Direct Storage",
+          "description_trans": "Nas Direct Storage",
+          "format": "bool",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": []
+    },
+    {
+      "iid": 21,
+      "name": "self-check",
+      "type_": null,
+      "description": "Self Check",
+      "description_trans": "Self Check",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "self-check-items",
+          "type_": null,
+          "description": "Self Check Items",
+          "description_trans": "Self Check Items",
+          "format": "uint8",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "0",
+              "value": 0,
+              "description": "0"
+            },
+            {
+              "name": "1",
+              "value": 1,
+              "description": "1"
+            },
+            {
+              "name": "2",
+              "value": 2,
+              "description": "2"
+            },
+            {
+              "name": "3",
+              "value": 3,
+              "description": "3"
+            },
+            {
+              "name": "4",
+              "value": 4,
+              "description": "4"
+            },
+            {
+              "name": "5",
+              "value": 5,
+              "description": "5"
+            }
+          ]
+        },
+        {
+          "iid": 2,
+          "name": "self-check-results",
+          "type_": null,
+          "description": "Self Check Results",
+          "description_trans": "Self Check Results",
+          "format": "string",
+          "access": [
+            "read",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 3,
+          "name": "manual-check-results",
+          "type_": null,
+          "description": "Manual Check Results",
+          "description_trans": "Manual Check Results",
+          "format": "uint8",
+          "access": [
+            "read",
+            "write",
+            "notify"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": [
+            {
+              "name": "Normal",
+              "value": 0,
+              "description": "Normal"
+            },
+            {
+              "name": "Abnormal",
+              "value": 1,
+              "description": "Abnormal"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "iid": 1,
+          "name": "start-check",
+          "type_": null,
+          "description": "Start Check",
+          "description_trans": "Start Check",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "self-check-items",
+              "type_": null,
+              "description": "Self Check Items",
+              "description_trans": "Self Check Items",
+              "format": "uint8",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": [
+                {
+                  "name": "0",
+                  "value": 0,
+                  "description": "0"
+                },
+                {
+                  "name": "1",
+                  "value": 1,
+                  "description": "1"
+                },
+                {
+                  "name": "2",
+                  "value": 2,
+                  "description": "2"
+                },
+                {
+                  "name": "3",
+                  "value": 3,
+                  "description": "3"
+                },
+                {
+                  "name": "4",
+                  "value": 4,
+                  "description": "4"
+                },
+                {
+                  "name": "5",
+                  "value": 5,
+                  "description": "5"
+                }
+              ]
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 2,
+          "name": "stop-check",
+          "type_": null,
+          "description": "Stop Check",
+          "description_trans": "Stop Check",
+          "in_": [],
+          "out": []
+        },
+        {
+          "iid": 3,
+          "name": "sync-manual-check",
+          "type_": null,
+          "description": "Sync Manual Check",
+          "description_trans": "Sync Manual Check",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "self-check-items",
+              "type_": null,
+              "description": "Self Check Items",
+              "description_trans": "Self Check Items",
+              "format": "uint8",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": [
+                {
+                  "name": "0",
+                  "value": 0,
+                  "description": "0"
+                },
+                {
+                  "name": "1",
+                  "value": 1,
+                  "description": "1"
+                },
+                {
+                  "name": "2",
+                  "value": 2,
+                  "description": "2"
+                },
+                {
+                  "name": "3",
+                  "value": 3,
+                  "description": "3"
+                },
+                {
+                  "name": "4",
+                  "value": 4,
+                  "description": "4"
+                },
+                {
+                  "name": "5",
+                  "value": 5,
+                  "description": "5"
+                }
+              ]
+            },
+            {
+              "iid": 3,
+              "name": "manual-check-results",
+              "type_": null,
+              "description": "Manual Check Results",
+              "description_trans": "Manual Check Results",
+              "format": "uint8",
+              "access": [
+                "read",
+                "write",
+                "notify"
+              ],
+              "unit": null,
+              "value_range": null,
+              "value_list": [
+                {
+                  "name": "Normal",
+                  "value": 0,
+                  "description": "Normal"
+                },
+                {
+                  "name": "Abnormal",
+                  "value": 1,
+                  "description": "Abnormal"
+                }
+              ]
+            }
+          ],
+          "out": []
+        },
+        {
+          "iid": 4,
+          "name": "stop-check",
+          "type_": null,
+          "description": "Stop Check",
+          "description_trans": "Stop Check",
+          "in_": [
+            {
+              "iid": 1,
+              "name": "self-check-items",
+              "type_": null,
+              "description": "Self Check Items",
+              "description_trans": "Self Check Items",
+              "format": "uint8",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": [
+                {
+                  "name": "0",
+                  "value": 0,
+                  "description": "0"
+                },
+                {
+                  "name": "1",
+                  "value": 1,
+                  "description": "1"
+                },
+                {
+                  "name": "2",
+                  "value": 2,
+                  "description": "2"
+                },
+                {
+                  "name": "3",
+                  "value": 3,
+                  "description": "3"
+                },
+                {
+                  "name": "4",
+                  "value": 4,
+                  "description": "4"
+                },
+                {
+                  "name": "5",
+                  "value": 5,
+                  "description": "5"
+                }
+              ]
+            }
+          ],
+          "out": []
+        }
+      ],
+      "events": [
+        {
+          "iid": 1,
+          "name": "self-check-complete",
+          "type_": null,
+          "description": "Self Check Complete",
+          "description_trans": "Self Check Complete",
+          "arguments": []
+        }
+      ]
+    },
+    {
+      "iid": 16,
+      "name": "family-guard",
+      "type_": null,
+      "description": "family-guard",
+      "description_trans": "family-guard",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "family-guard-config",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "string",
+          "access": [
+            "read",
+            "notify",
+            "write"
+          ],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        },
+        {
+          "iid": 2,
+          "name": "clock-key",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "string",
+          "access": [],
+          "unit": null,
+          "value_range": null,
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "long-time-no-human",
+          "type_": null,
+          "description": "long-time-no-human",
+          "description_trans": "long-time-no-human",
+          "arguments": [
+            {
+              "iid": 2,
+              "name": "clock-key",
+              "type_": null,
+              "description": "",
+              "description_trans": "",
+              "format": "string",
+              "access": [],
+              "unit": null,
+              "value_range": null,
+              "value_list": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iid": 19,
+      "name": "other-functions",
+      "type_": null,
+      "description": "other-functions",
+      "description_trans": "other-functions",
+      "properties": [
+        {
+          "iid": 1,
+          "name": "long-time-no-human",
+          "type_": null,
+          "description": "",
+          "description_trans": "",
+          "format": "uint8",
+          "access": [],
+          "unit": "minutes",
+          "value_range": {
+            "min_": 1.0,
+            "max_": 60.0,
+            "step": 1.0
+          },
+          "value_list": null
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "iid": 1,
+          "name": "no-human-appear",
+          "type_": null,
+          "description": "no-human-appear",
+          "description_trans": "no-human-appear",
+          "arguments": [
+            {
+              "iid": 1,
+              "name": "long-time-no-human",
+              "type_": null,
+              "description": "",
+              "description_trans": "",
+              "format": "uint8",
+              "access": [],
+              "unit": "minutes",
+              "value_range": {
+                "min_": 1.0,
+                "max_": 60.0,
+                "step": 1.0
+              },
+              "value_list": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

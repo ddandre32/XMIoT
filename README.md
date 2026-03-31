@@ -13,6 +13,7 @@
 - **局域网发现**: UDP广播探测局域网设备
 - **RESTful API**: 提供完整的HTTP API接口
 - **MCP支持**: 支持Model Context Protocol，供AI智能体调用
+- **CLI工具**: 高性能命令行接口，适合自动化脚本和智能体调用
 - **类型安全**: 完整的类型注解和Pydantic模型验证
 
 ## 项目结构
@@ -41,6 +42,14 @@ xiaomi_iot_manager/
 │       └── system.py
 ├── mcp/                # MCP服务
 │   └── server.py
+├── cli/                # CLI工具
+│   ├── main.py         # CLI主入口
+│   ├── config.py       # 配置管理
+│   ├── commands_device.py   # 设备命令
+│   ├── commands_scene.py    # 场景命令
+│   ├── commands_system.py   # 系统命令
+│   ├── client.py       # CLI客户端封装
+│   └── formatter.py    # 输出格式化
 ├── examples/           # 使用示例
 │   ├── basic_usage.py
 │   ├── run_api_server.py
@@ -158,6 +167,35 @@ async def main():
 asyncio.run(main())
 ```
 
+### 5. 使用CLI工具（推荐用于自动化和智能体）
+
+CLI工具提供高性能的命令行接口，适合OpenClaw等智能体调用：
+
+```bash
+# 安装后自动可用
+pip install -e "."
+
+# 获取OAuth授权URL
+miot system oauth-url
+
+# 完成认证
+miot system auth <授权码>
+
+# 列出设备
+miot device list
+
+# 控制设备（开灯）
+miot device prop set <did> 2 1 true
+
+# 执行场景
+miot scene run <scene_id>
+
+# 发送通知
+miot system notify "你好，小米IoT！"
+```
+
+CLI完整文档见 [cli/README.md](cli/README.md)
+
 ## API参考
 
 ### 设备管理
@@ -217,6 +255,48 @@ AI智能体可以通过以下工具控制设备：
 - `execute_action` - 执行动作
 - `get_scenes` - 获取场景列表
 - `execute_scene` - 执行场景
+
+## CLI命令参考
+
+### 设备命令
+
+```bash
+miot device list                    # 列出设备
+miot device list --online           # 仅在线设备
+miot device list --type light       # 按类型筛选
+miot device get <did>               # 获取设备详情
+miot device spec <did>              # 获取设备SPEC
+miot device prop get <did> <siid> <piid>   # 获取属性
+miot device prop set <did> <siid> <piid> <value>  # 设置属性
+miot device action <did> <siid> <aiid>     # 执行动作
+miot device batch --file ops.json   # 批量控制
+```
+
+### 场景命令
+
+```bash
+miot scene list                     # 列出场景
+miot scene search <keyword>         # 搜索场景
+miot scene run <scene_id>           # 执行场景
+```
+
+### 系统命令
+
+```bash
+miot system status                  # 系统状态
+miot system oauth-url               # 获取OAuth URL
+miot system auth <code>             # 完成认证
+miot system notify <content>        # 发送通知
+miot system config <key> [value]    # 配置管理
+```
+
+### 快捷命令
+
+```bash
+miot devices                        # 等同于 device list
+miot scenes                         # 等同于 scene list
+miot status                         # 等同于 system status
+```
 
 ## 开发指南
 
