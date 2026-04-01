@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "total": 2,
+    "success": 1,
+    "failed": 1,
+    "success_rate": 0.5
+  },
+  "results": [
+    {
+      "api_name": "gen_oauth_url",
+      "success": true,
+      "error": null,
+      "details": {
+        "url": "https://account.xiaomi.com/oauth2/authorize?redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fcallback&cl..."
+      },
+      "timestamp": "2026-04-01T17:34:36.840618"
+    },
+    {
+      "api_name": "get_access_token",
+      "success": false,
+      "error": "OAuth错误: [-1] Invalid response: {\"code\":-6,\"message\":\"{\\\"error\\\":96013,\\\"error_description\\\":\\\"invalid authorization code\\\",\\\"traceId\\\":\\\"de34b8f6243ac8810b56fdf1aaad473d\\\"}\",\"result\":{\"error\":96013,\"error_description\":\"invalid auth",
+      "details": null,
+      "timestamp": "2026-04-01T17:34:37.220347"
+    }
+  ]
+}

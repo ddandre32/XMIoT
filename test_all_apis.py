@@ -43,6 +43,8 @@ class APITester:
         self.devices: Dict = {}
         self.scenes: Dict = {}
         self.homes: Dict = {}
+        # 使用固定UUID或从命令行传入
+        self.uuid: str = args.uuid or "99072b52d3454281b98f0de082595e2b"
 
     def log(self, message: str, level: str = "INFO"):
         """打印日志"""
@@ -71,7 +73,7 @@ class APITester:
         """测试1: OAuth URL生成（无需认证）"""
         try:
             self.client = MIoTClient(
-                uuid=uuid.uuid4().hex,
+                uuid=self.uuid,  # 使用固定UUID
                 redirect_uri="http://127.0.0.1:8000/callback",
                 cache_path="./test_cache",
                 cloud_server="cn",
@@ -479,6 +481,7 @@ async def main():
     parser = argparse.ArgumentParser(description="XMIoT API权限测试")
     parser.add_argument("--code", help="OAuth授权码")
     parser.add_argument("--token", help="已有access_token")
+    parser.add_argument("--uuid", help="固定UUID（用于匹配授权时的device_id）")
     parser.add_argument("--non-interactive", action="store_true", help="非交互模式")
     args = parser.parse_args()
 

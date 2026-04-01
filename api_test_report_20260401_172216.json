@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "total": 16,
+    "success": 4,
+    "failed": 12,
+    "success_rate": 0.25
+  },
+  "results": [
+    {
+      "api_name": "gen_oauth_url",
+      "success": true,
+      "error": null,
+      "details": {
+        "url": "https://account.xiaomi.com/oauth2/authorize?redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fcallback&cl..."
+      },
+      "timestamp": "2026-04-01T17:22:13.794042"
+    },
+    {
+      "api_name": "get_access_token",
+      "success": true,
+      "error": null,
+      "details": {
+        "access_token": "V3_Q1Ng5hMS1HnGbn7Uh...",
+        "refresh_token": "R3_G4GEtUI8EsGwyKja4...",
+        "expires_ts": 1775216774
+      },
+      "timestamp": "2026-04-01T17:22:14.206067"
+    },
+    {
+      "api_name": "refresh_access_token",
+      "success": true,
+      "error": null,
+      "details": {
+        "new_token_prefix": "V3_Q1Ng5hMS1HnGbn7Uh..."
+      },
+      "timestamp": "2026-04-01T17:22:14.591151"
+    },
+    {
+      "api_name": "get_user_info",
+      "success": false,
+      "error": "HTTP错误: [1001] Unauthorized",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.026862"
+    },
+    {
+      "api_name": "get_homes",
+      "success": false,
+      "error": "HTTP错误: [1001] Unauthorized",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.133195"
+    },
+    {
+      "api_name": "get_devices",
+      "success": false,
+      "error": "HTTP错误: [1001] Unauthorized",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.421246"
+    },
+    {
+      "api_name": "get_device",
+      "success": false,
+      "error": "没有可用设备",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.421327"
+    },
+    {
+      "api_name": "get_device_spec",
+      "success": false,
+      "error": "没有可用设备",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.421361"
+    },
+    {
+      "api_name": "get_prop",
+      "success": false,
+      "error": "没有可用设备",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.421398"
+    },
+    {
+      "api_name": "set_prop",
+      "success": false,
+      "error": "跳过（避免修改设备状态）",
+      "details": {
+        "note": "为避免影响设备，跳过写入测试"
+      },
+      "timestamp": "2026-04-01T17:22:15.421425"
+    },
+    {
+      "api_name": "action",
+      "success": false,
+      "error": "跳过（避免修改设备状态）",
+      "details": {
+        "note": "为避免影响设备，跳过动作执行测试"
+      },
+      "timestamp": "2026-04-01T17:22:15.421486"
+    },
+    {
+      "api_name": "get_manual_scenes",
+      "success": false,
+      "error": "HTTP错误: [1001] Unauthorized",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.652493"
+    },
+    {
+      "api_name": "run_manual_scene",
+      "success": false,
+      "error": "跳过（避免触发场景）",
+      "details": {
+        "note": "为避免触发场景动作，跳过执行测试"
+      },
+      "timestamp": "2026-04-01T17:22:15.652560"
+    },
+    {
+      "api_name": "create_app_notify",
+      "success": false,
+      "error": "HTTP错误: [1001] Unauthorized",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:15.869558"
+    },
+    {
+      "api_name": "send_app_notify_once",
+      "success": false,
+      "error": "HTTP错误: [1001] Unauthorized",
+      "details": null,
+      "timestamp": "2026-04-01T17:22:16.163514"
+    },
+    {
+      "api_name": "ping_lan_devices",
+      "success": true,
+      "error": null,
+      "details": null,
+      "timestamp": "2026-04-01T17:22:16.164280"
+    }
+  ]
+}

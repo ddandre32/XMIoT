@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "total": 1,
+    "success": 1,
+    "failed": 0,
+    "success_rate": 1.0
+  },
+  "results": [
+    {
+      "api_name": "gen_oauth_url",
+      "success": true,
+      "error": null,
+      "details": {
+        "url": "https://account.xiaomi.com/oauth2/authorize?redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fcallback&cl..."
+      },
+      "timestamp": "2026-04-01T16:16:26.634249"
+    }
+  ]
+}

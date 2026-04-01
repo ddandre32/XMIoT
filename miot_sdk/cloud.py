@@ -235,7 +235,7 @@ class MIoTHttpClient:
             "X-Client-AppId": OAUTH2_CLIENT_ID,
             "X-Client-Secret": self._client_secret_b64,
             "Host": self._host,
-            "Authorization": f"Bearer {self._access_token}",
+            "Authorization": f"Bearer{self._access_token}",
         }
 
     def aes_encrypt_with_b64(self, data: Dict) -> str:
