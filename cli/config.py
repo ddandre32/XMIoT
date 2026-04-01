@@ -19,7 +19,7 @@ class CLIConfig:
 
     DEFAULT_CONFIG = {
         "uuid": None,
-        "redirect_uri": "http://localhost:8000/callback",
+        "redirect_uri": "http://127.0.0.1:8000/callback",
         "cache_path": "~/.miot/cache",
         "cloud_server": "cn",
         "oauth_info": None,
