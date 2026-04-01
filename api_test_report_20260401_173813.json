@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "total": 16,
+    "success": 13,
+    "failed": 3,
+    "success_rate": 0.8125
+  },
+  "results": [
+    {
+      "api_name": "gen_oauth_url",
+      "success": true,
+      "error": null,
+      "details": {
+        "url": "https://account.xiaomi.com/oauth2/authorize?redirect_uri=http%3A%2F%2F127.0.0.1%3A8000%2Fcallback&cl..."
+      },
+      "timestamp": "2026-04-01T17:38:08.906776"
+    },
+    {
+      "api_name": "get_access_token",
+      "success": true,
+      "error": null,
+      "details": {
+        "access_token": "V3_3xLuyF3T8qJ4iGKbK...",
+        "refresh_token": "R3_A6ydZA1w8AnrjTK_u...",
+        "expires_ts": 1775217729
+      },
+      "timestamp": "2026-04-01T17:38:09.145519"
+    },
+    {
+      "api_name": "refresh_access_token",
+      "success": true,
+      "error": null,
+      "details": {
+        "new_token_prefix": "V3_3xLuyF3T8qJ4iGKbK..."
+      },
+      "timestamp": "2026-04-01T17:38:09.692093"
+    },
+    {
+      "api_name": "get_user_info",
+      "success": true,
+      "error": null,
+      "details": {
+        "uid": "2445066316",
+        "nickname": "livin9"
+      },
+      "timestamp": "2026-04-01T17:38:10.143082"
+    },
+    {
+      "api_name": "get_homes",
+      "success": true,
+      "error": null,
+      "details": {
+        "home_count": 1
+      },
+      "timestamp": "2026-04-01T17:38:10.355191"
+    },
+    {
+      "api_name": "get_devices",
+      "success": true,
+      "error": null,
+      "details": {
+        "device_count": 4
+      },
+      "timestamp": "2026-04-01T17:38:11.103186"
+    },
+    {
+      "api_name": "get_device",
+      "success": true,
+      "error": null,
+      "details": {
+        "did": "543110953",
+        "name": "小爱音箱Play"
+      },
+      "timestamp": "2026-04-01T17:38:11.103290"
+    },
+    {
+      "api_name": "get_device_spec_lite",
+      "success": true,
+      "error": null,
+      "details": {
+        "urn": "urn:miot-spec-v2:device:speaker:0000A015:xiaomi-l05b:1",
+        "spec_count": 24
+      },
+      "timestamp": "2026-04-01T17:38:11.246242"
+    },
+    {
+      "api_name": "get_prop",
+      "success": true,
+      "error": null,
+      "details": {
+        "did": "543110953",
+        "value": 39
+      },
+      "timestamp": "2026-04-01T17:38:11.590379"
+    },
+    {
+      "api_name": "set_prop",
+      "success": false,
+      "error": "跳过（避免修改设备状态）",
+      "details": {
+        "note": "为避免影响设备，跳过写入测试"
+      },
+      "timestamp": "2026-04-01T17:38:11.590473"
+    },
+    {
+      "api_name": "action",
+      "success": false,
+      "error": "跳过（避免修改设备状态）",
+      "details": {
+        "note": "为避免影响设备，跳过动作执行测试"
+      },
+      "timestamp": "2026-04-01T17:38:11.590531"
+    },
+    {
+      "api_name": "get_manual_scenes",
+      "success": true,
+      "error": null,
+      "details": {
+        "scene_count": 0
+      },
+      "timestamp": "2026-04-01T17:38:12.122243"
+    },
+    {
+      "api_name": "run_manual_scene",
+      "success": false,
+      "error": "跳过（避免触发场景）",
+      "details": {
+        "note": "为避免触发场景动作，跳过执行测试"
+      },
+      "timestamp": "2026-04-01T17:38:12.122324"
+    },
+    {
+      "api_name": "create_app_notify",
+      "success": true,
+      "error": null,
+      "details": {
+        "notify_id": "507fa0c7bd16cb046c659d9b11c31a122b68d87f5a5b50b01c5a8ab2cf279b70"
+      },
+      "timestamp": "2026-04-01T17:38:12.451182"
+    },
+    {
+      "api_name": "send_app_notify_once",
+      "success": true,
+      "error": null,
+      "details": {
+        "result": true
+      },
+      "timestamp": "2026-04-01T17:38:13.680701"
+    },
+    {
+      "api_name": "ping_lan_devices",
+      "success": true,
+      "error": null,
+      "details": null,
+      "timestamp": "2026-04-01T17:38:13.681402"
+    }
+  ]
+}
